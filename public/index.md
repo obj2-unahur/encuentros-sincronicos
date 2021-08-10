@@ -1,6 +1,6 @@
 ### ¿Qué presentación querés ver?
 
-[Clase 5](clase5) / [Clase 6](clase6)
+[Clase 1](clase1)
 
 
 ![Logo](img/logo.png)
