@@ -177,6 +177,22 @@ Tendremos 7 entregas obligatorias, de cuya aprobación dependerá la calificaci�
 
 ===
 
+## Repaso de POO
+
+El único objetivo es recuperar conceptos previos y empezar a calentar motores. Todas las respuestas son anónimas. 
+
+Vamos a usar un sitio llamado `Mentimeter`. Podés acceder desde este mismo dispositivo o desde otro, da lo mismo.
+
+--
+
+<div style='position: relative; padding-bottom: 56.25%; padding-top: 35px; height: 0; overflow: hidden;'><iframe sandbox='allow-scripts allow-same-origin allow-presentation' allowfullscreen='true' allowtransparency='true' frameborder='0' height='315' src='https://www.mentimeter.com/embed/96d456b14fe6eccff4a505b26d7ac208/4a74ae22db74' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' width='420'></iframe></div>
+
+--
+
+<div style='position: relative; padding-bottom: 56.25%; padding-top: 35px; height: 0; overflow: hidden;'><iframe sandbox='allow-scripts allow-same-origin allow-presentation' allowfullscreen='true' allowtransparency='true' frameborder='0' height='315' src='https://www.mentimeter.com/embed/6bbea048031d32f7fe751cc913128242/f90470cb2e43' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' width='420'></iframe></div>
+
+===
+
 # ¿Preguntas?
 
 <img width="200px" src="img/logo.png">
