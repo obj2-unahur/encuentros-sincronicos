@@ -31,9 +31,25 @@
 
 ===
 
+## Equipo docente
+
+<img src="img/profes/Federico%20Aloi.jpg" height="250px">
+<img src="img/profes/Rodrigo%20Alfonso.jpg" height="250px">
+
+<br>
+
+<img src="img/profes/Marcelo%20Torres.jpg" height="250px">
+<img src="img/profes/Matías%20Angeli.jpg" height="250px">
+
+===
+
 ## Tecnologías involucradas
 
-Escribir código
+No es lo más importante, pero sabemos que es lo primero que quieren escuchar. 😛
+
+--
+
+### Escribir código
 
 <img src="/img/clases/kotlin-logo.png">
 <img src="/img/clases/kotest-logo.png">
@@ -47,7 +63,7 @@ Escribir código
 
 --
 
-Compartir código
+### Compartir código
 
 <img src="/img/clases/git-logo.png">
 <img src="/img/clases/github-logo.png">
@@ -55,10 +71,12 @@ Compartir código
 
 --
 
-Comunicarnos
+### Comunicarnos
 
 <img src="/img/clases/discord-logo.png">
 <img src="/img/clases/jitsi-logo.png">
+
+Les pedimos encarecidamente comunicarse con nosotros **solamente** a través de los canales de la materia, y no por mensaje privado.
 
 
 ===
@@ -174,6 +192,14 @@ Tendremos 7 entregas obligatorias, de cuya aprobación dependerá la calificaci�
 * **Primer parcial:** primeras 4 entregas.
 * **Segundo parcial:** últimas 3 entregas.
 * **Recuperatorios:** corregir aspectos de las entregas.
+
+===
+
+## Uso de compus
+
+Pueden ir a la Universidad a utilizar las compus de los laboratorios, que tendrán el software que usamos instalado.
+
+Luego les pasamos los detalles de cómo hacerlo.
 
 ===
 
