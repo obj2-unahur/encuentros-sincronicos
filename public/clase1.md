@@ -114,7 +114,7 @@ No necesariamente en el orden que los veremos a continuación.
 
 --
 
-### Atributos de calidad
+### Cualidades de diseño
 
 * Acoplamiento / cohesión.
 * Robustez.
