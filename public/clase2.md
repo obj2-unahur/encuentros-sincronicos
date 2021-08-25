@@ -6,9 +6,9 @@
 
 ===
 
-## Primera clase
+<div style='position: relative; padding-bottom: 56.25%; padding-top: 35px; height: 0; overflow: hidden;'><iframe sandbox='allow-scripts allow-same-origin allow-presentation' allowfullscreen='true' allowtransparency='true' frameborder='0' height='315' src='https://www.mentimeter.com/embed/5dcc0e54b5cb768b4990a8ca983b5074/fcaa00fc379a' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' width='420'></iframe></div>
 
-¿Cómo les fue? ¿Pudieron ver el material? ¿Costó mucho el ejercicio?
+<small>Pueden escribir sobre el ejercicio, la metodología, el lenguaje... lo que quieran.</small>
 
 ===
 
@@ -52,8 +52,19 @@ _(tomado del apunte **Matchers de Kotest**)_
 it('falla al agregar vendedor existente') {
   val centroTesei = CentroDistribucion(buenosAires)
 
+  centroTesei.agregarVendedor(juana)
+  centroTesei.agregarVendedor(juana).shouldThrowException()
+});
+```
+
+--
+
+```kotlin
+it('falla al agregar vendedor existente') {
+  val centroTesei = CentroDistribucion(buenosAires)
+
   // La agrega
-  centroTesei.agregarVendedor(juana);
+  centroTesei.agregarVendedor(juana)
 
   // La siguiente va a fallar, por eso lo hago dentro del {}
   shouldThrowMessage("Ya existe esa persona en la nómina") {
@@ -81,7 +92,7 @@ Más detalles en el video introductorio.
 
 > Nunca escribas nueva funcionalidad sin una prueba que falle antes. (Kent Beck)
 
-> Si no puedes escribir una prueba para lo que estás por codificar, entonces no deberías estar pensando en codificar. (Dave Chaplin)
+> Si no puedes escribir una prueba para lo que estás por programar, entonces no deberías estar pensando en programar. (Dave Chaplin)
 
 ===
 
@@ -104,6 +115,14 @@ Creamos un canal para quienes aún no lo tienen. Lo definen en el momento de clo
 ### Caralibro
 
 Resolver usando TDD.
+
+--
+
+### Compus de la UNaHur
+
+Ya está todo instalado con Linux en las compus, busquen la actividad **Objetos 2 (práctica)**.
+
+![](img/clases/2/turno.png)
 
 ===
 
