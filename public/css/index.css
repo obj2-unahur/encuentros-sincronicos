@@ -1,11 +1,15 @@
 .fa-telegram-plane.color {
-  color: #2CA0DB; 
+  color: #2ca0db;
 }
 
 .fa-instagram.color {
-  color: #C83085; 
+  color: #c83085;
 }
 
 .fa-youtube.color {
-  color: #F7021A; 
+  color: #f7021a;
+}
+
+.reveal pre {
+  width: 100% !important;
 }
