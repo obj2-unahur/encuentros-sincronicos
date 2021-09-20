@@ -6,6 +6,7 @@
     "lint": "prettier --check \"src/**/*.js\""
   },
   "dependencies": {
+    "plantuml-encoder": "^1.4.0",
     "reveal.js": "^4.1.0"
   },
   "devDependencies": {
