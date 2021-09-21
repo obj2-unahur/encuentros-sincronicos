@@ -13,3 +13,7 @@
 .reveal pre {
   width: 100% !important;
 }
+
+.fullscreen code {
+  max-height: fit-content !important;
+}
