@@ -4,7 +4,7 @@ import Highlight from 'reveal.js/plugin/highlight/highlight.esm.js';
 
 import 'reveal.js/dist/reveal.css';
 import 'reveal.js/dist/theme/beige.css';
-import 'reveal.js/plugin/highlight/zenburn.css';
+import '../public/css/github-dark-dimmed.css';
 
 const slide = new Reveal({
   hash: true,
