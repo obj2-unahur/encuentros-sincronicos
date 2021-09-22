@@ -12,7 +12,41 @@
 
 ===
 
+## Strategy
+
+Algunos comentarios para tener en cuenta.
+
+--
+
+### ¿Y el `if` ya pasó de moda?
+
+**NO.** Siempre hay que tener la simplicidad como bandera.
+
+--
+
+### Preguntas para orientar la decisión
+
+- **¿La estrategia puede cambiar?** Si no, por ahí alcanza con subclases.
+<!-- .element: class="fragment" -->
+
+- **¿Hay solo dos opciones?** Se puede arrancar con un `if` y después cambiar.
+<!-- .element: class="fragment" -->
+
+- **¿Las estrategias tienen configuraciones propias?** Tal vez sea mejor usar _Strategy_ desde el principio.
+<!-- .element: class="fragment" -->
+
+- **¿Es altamente probable que aparezcan nuevas estrategias?** Tal vez sea mejor usar _Strategy_ desde el principio.
+<!-- .element: class="fragment" -->
+
+===
+
 ## Semillas al viento
+
+Si borraron los comentarios, **no cumplieron con la consigna**.
+
+Hasta que no los pongan, no les corregimos. 😖
+
+--
 
 Repasemos las cualidades y dónde estaban en el ejercicio.
 
@@ -45,23 +79,23 @@ _El conocimiento debe estar en un solo lugar._
 --
 
 ```kotlin
-abstract class Planta() {
+abstract class Planta(...) {
   open fun daSemillas() =
     this.esFuerte() || this.condicionEspecifica()
 
   abstract fun condicionEspecifica(): Boolean;
 }
 
-class Menta : Planta() {
+class Menta(...) : Planta(...) {
   override fun condicionEspecifica() = this.altura > 0.4
 }
 
-class Soja : Planta() {
+class Soja(...) : Planta(...) {
   override fun condicionEspecifica() =
     this.anioObtencionSemilla > 2007 && this.altura > 1
 }
 
-class SojaTransgenica : Soja() {
+class SojaTransgenica(...) : Soja(...) {
   override fun daSemillas() = false
 }
 ```
@@ -97,7 +131,7 @@ _¿Cuántas responsabilidades tiene un componente?_
 
 _Reducir al mínimo posible el efecto._
 
-- `Planta.altura` -> debería ser `const`, porque en el enunciado dice que no va a cambiar.
+- `Planta.altura` -> debería ser `val`, porque en el enunciado dice que no va a cambiar.
 - `Agricultora.parcelas` -> debería ser inmutable, porque en el enunciado dice que no se pueden comprar ni vender.
 
 ===
