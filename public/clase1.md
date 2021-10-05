@@ -6,7 +6,7 @@
 
 ===
 
-## Este curso 
+## Este curso
 
 **No es...**
 
@@ -27,7 +27,6 @@
 ✅ para intercambiar ideas sobre cómo se desarrolla software de manera profesional.
 
 ✅ para personas que están trabajando en software o que quieren hacerlo.
-
 
 ===
 
@@ -51,33 +50,32 @@ No es lo más importante, pero sabemos que es lo primero que quieren escuchar. �
 
 ### Escribir código
 
-<img src="/img/clases/kotlin-logo.png">
-<img src="/img/clases/kotest-logo.png">
-<img src="/img/clases/intellij-logo.png">
+<img src="img/clases/1/kotlin-logo.png">
+<img src="img/clases/1/kotest-logo.png">
+<img src="img/clases/1/intellij-logo.png">
 
 <br>
 
-<img src="/img/clases/ts-logo.png">
-<img src="/img/clases/jest-logo.png">
-<img src="/img/clases/vscode-logo.png">
+<img src="img/clases/1/ts-logo.png">
+<img src="img/clases/1/jest-logo.png">
+<img src="img/clases/1/vscode-logo.png">
 
 --
 
 ### Compartir código
 
-<img src="/img/clases/git-logo.png">
-<img src="/img/clases/github-logo.png">
-<img src="/img/clases/ghclassroom-logo.png">
+<img src="img/clases/1/git-logo.png">
+<img src="img/clases/1/github-logo.png">
+<img src="img/clases/1/ghclassroom-logo.png">
 
 --
 
 ### Comunicarnos
 
-<img src="/img/clases/discord-logo.png">
-<img src="/img/clases/jitsi-logo.png">
+<img src="img/clases/1/discord-logo.png">
+<img src="img/clases/1/jitsi-logo.png">
 
 Les pedimos encarecidamente comunicarse con nosotros **solamente** a través de los canales de la materia, y no por mensaje privado.
-
 
 ===
 
@@ -91,42 +89,42 @@ No necesariamente en el orden que los veremos a continuación.
 
 ### Diseño de software
 
-* Qué es y para qué sirve.
-* _Refactorización_ como técnica de diseño.
-* Comparación de soluciones.
-* Patrones de diseño: cuándo y cómo aplicarlos.
+- Qué es y para qué sirve.
+- _Refactorización_ como técnica de diseño.
+- Comparación de soluciones.
+- Patrones de diseño: cuándo y cómo aplicarlos.
 
 --
 
 ### Patrones de diseño
 
-* Creacionales: _Singleton_.
-* Estructurales: _Adapter_ y _Composite_.
-* De comportamiento: _Observer_, _Strategy_ y _Template method_.
+- Creacionales: _Singleton_.
+- Estructurales: _Adapter_ y _Composite_.
+- De comportamiento: _Observer_, _Strategy_ y _Template method_.
 
 --
 
 ### Testing
 
-* Elaboración de casos de prueba.
-* Testing automatizado.
-* _Test driven development (TDD)_ o _Desarrollo guiado por pruebas_.
+- Elaboración de casos de prueba.
+- Testing automatizado.
+- _Test driven development (TDD)_ o _Desarrollo guiado por pruebas_.
 
 --
 
 ### Cualidades de diseño
 
-* Acoplamiento / cohesión.
-* Robustez.
-* Mutaciones controladas.
-* Redundancia mínima.
-* Simplicidad.
+- Acoplamiento / cohesión.
+- Robustez.
+- Mutaciones controladas.
+- Redundancia mínima.
+- Simplicidad.
 
 ===
 
 ## Modalidad de cursada
 
-El curso tiene una duración de **dieciseis semanas** y consta de **ocho clases** teórico-prácticas. Cada clase tiene una duración de dos semanas. 
+El curso tiene una duración de **dieciseis semanas** y consta de **ocho clases** teórico-prácticas. Cada clase tiene una duración de dos semanas.
 
 Cada clase se compone de...
 
@@ -136,11 +134,11 @@ Cada clase se compone de...
 
 ### Encuentro sincrónico 👥
 
-Lo que está ocurriendo ahora. 
+Lo que está ocurriendo ahora.
 
-Siempre grabamos y subimos al sitio apenas termina.*
+Siempre grabamos y subimos al sitio apenas termina.\*
 
-<small>* Bueno, puede fallar. Pero casi siempre lo hacemos. 😅</small>
+<small>\* Bueno, puede fallar. Pero casi siempre lo hacemos. 😅</small>
 
 --
 
@@ -178,7 +176,6 @@ Tenemos una **buena** y una **mala** noticia... 🤔
 
 No vamos a tener parciales. O al menos no en el formato que típicamente conocemos como "parcial".
 
-
 --
 
 ### 😢 La mala
@@ -189,9 +186,9 @@ Tendremos 7 entregas obligatorias, de cuya aprobación dependerá la calificaci�
 
 ### 📈 La nota
 
-* **Primer parcial:** primeras 4 entregas.
-* **Segundo parcial:** últimas 3 entregas.
-* **Recuperatorios:** corregir aspectos de las entregas.
+- **Primer parcial:** primeras 4 entregas.
+- **Segundo parcial:** últimas 3 entregas.
+- **Recuperatorios:** corregir aspectos de las entregas.
 
 ===
 
@@ -205,7 +202,7 @@ Luego les pasamos los detalles de cómo hacerlo.
 
 ## Repaso de POO
 
-El único objetivo es recuperar conceptos previos y empezar a calentar motores. Todas las respuestas son anónimas. 
+El único objetivo es recuperar conceptos previos y empezar a calentar motores. Todas las respuestas son anónimas.
 
 Vamos a usar un sitio llamado `Mentimeter`. Podés acceder desde este mismo dispositivo o desde otro, da lo mismo.
 
