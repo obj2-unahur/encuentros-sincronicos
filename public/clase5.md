@@ -1,130 +1,179 @@
+<div style='position: relative; padding-bottom: 56.25%; padding-top: 35px; height: 0; overflow: hidden;'><iframe sandbox='allow-scripts allow-same-origin allow-presentation' allowfullscreen='true' allowtransparency='true' frameborder='0' height='315' src='https://www.mentimeter.com/embed/fdc518b8cfd6221b6e753fccf61f4fed/4f3019ab5592' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' width='420'></iframe></div>
+
+<small>☝️ No cierren la página, que hay dos preguntas.</small>
+
+===
+
 ## Clase 5
 
-# Refactorización
+## Interacción con el mundo real
 
 ![Logo](img/logo.png)
 
 ===
 
-## Pero antes...
+![flyer](img/clases/5/presencial.png) <!-- .element: style="width: 50%" -->
 
-<img src="https://github.com/obj2-unahur/ventas-aereas/raw/master/assets/portada.jpg" class="fragment">
-
-Hablemos del parcial. <!-- .element: class="fragment" -->
+Después del taller, haremos clase de consultas hasta las 21:00. Por supuesto, la participación es **opcional**.
 
 ===
 
-## Hablemos del parcial
+## Tareas
 
-<div style='position: relative; padding-bottom: 56.25%; padding-top: 35px; height: 0; overflow: hidden;'><iframe sandbox='allow-scripts allow-same-origin allow-presentation' allowfullscreen='true' allowtransparency='true' frameborder='0' height='315' src='https://www.mentimeter.com/embed/d8b4fa1a511ce420802c7a8155d4fa1f/80e550401c8c' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' width='420'></iframe></div>
+En todos los que vi, el patrón **Composite** salió perfecto. 😁
 
-===
+```plantuml
+!$BGCOLOR = "transparent"
+!theme plain
 
-## Hablemos del parcial
+hide empty members
 
-<div style='position: relative; padding-bottom: 56.25%; padding-top: 35px; height: 0; overflow: hidden;'><iframe sandbox='allow-scripts allow-same-origin allow-presentation' allowfullscreen='true' allowtransparency='true' frameborder='0' height='315' src='https://www.mentimeter.com/embed/e4a2d9f27d0fa1a548a9719f617e075c/d90ae99bc8bb' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' width='420'></iframe></div>
+abstract class Tarea {
+  nominaTrabajadores(): Set<Trabajador>
+  horasNecesarias(): Int
+  costo(): Double
+}
 
-===
+class TareaSimple extends Tarea
 
-## Hablemos del parcial
+class TareaIntegracion extends Tarea {
+  subtareas: Set<Tarea>
+}
 
-<div style='position: relative; padding-bottom: 56.25%; padding-top: 35px; height: 0; overflow: hidden;'><iframe sandbox='allow-scripts allow-same-origin allow-presentation' allowfullscreen='true' allowtransparency='true' frameborder='0' height='315' src='https://www.mentimeter.com/embed/6e8515da8a41fd7520a87e1833fa33f9/de12d1729171' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' width='420'></iframe></div>
-
-===
-
-## Comentarios sobre el parcial
-
-Basados pura y exclusivamente en lo que fueron preguntando por Discord.
-
---
-
-No asuman nada respecto al enunciado, lo que no se entiende, se pregunta.
-
-En esta materia no buscamos que participen del relevamiento ni que inventen requerimientos. Lo que hay que hacer es **diseñar una solución** para el problema que se plantea.
-
---
-
-Programar es crear un **modelo** de la realidad, que puede o no coincidir con esta. 
-
-En objetos, es perfectamente razonable que:
-* un vuelo sepa cómo vender un pasaje,
-* un producto sepa cuánto sale,
-* una olla sepa cómo limpiarse.
-
-Dónde van los métodos depende de las **decisiones de diseño** que tomen, no de quién tendría esa responsabilidad en la vida real.
-
---
-
-**Empresa** = entidad que solo conoce sus vuelos y establece la política que determina si se puede vender.
-
-**IATA** = entidad que conoce todos los vuelos y realiza estadísticas.
-
-<small>El enunciado no especificaba si podía haber más de una empresa, así que podrían haberla modelado con objetos o clases. Si usaron clases, las estadísticas sí o sí tienen que ir a la IATA, porque la empresa solo conoce _sus_ vuelos.</small>
-
---
-
-¡Tener a mano los recursos de la materia! Matchers, colecciones, etc.
-
-![Apuntes](img/obj2-apuntes.png)
+TareaIntegracion::subtareas --> Tarea : tiene varias
+```
 
 ===
 
-## Posible solución
+## Compartir datos fuera de nuestra aplicación
 
-Deberían haber aparecido todos los patrones que vimos hasta ahora: **Strategy** (para los criterios), **Singleton** (para la IATA y tal vez la empresa) y **Companion object** (para el Vuelo).
-
-
---
-
-Sin saberlo, puede que hayan aplicado el patrón **Template method**. Hay un video sobre esto en la clase.
+Al querer "salir" de un programa que hicimos, aparece un problema: cómo hacer para que los datos "vivan" más allá de la ejecución.
 
 --
 
-Además, hay otro video que hizo Pablo donde resuelve todo el ejercicio. 
+Las motivaciones para esto pueden ser varias, aunque _grosso modo_ podemos agruparlas en dos:
 
-Eso sí, dura 2 horas. ⏲️
+- **Persistencia:** queremos que los datos _perduren_ en el tiempo.
+- **Intercambio:** queremos que estos datos se puedan usar en _otra aplicación_.
+
+Sea cual sera el escenario, vamos a necesitar **serializar** nuestros objetos, convirtiéndolos a bytes o texto.
+
+--
+
+Al respecto, [dice la Wikipedia](https://es.wikipedia.org/wiki/Serializaci%C3%B3n):
+
+> La **serialización** (o marshalling en inglés) consiste en un proceso de codificación de un objeto en un medio de almacenamiento (como puede ser un archivo, o un buffer de memoria) con el fin de transmitirlo a través de una conexión en red como una serie de bytes o en un formato humanamente más legible como XML o JSON, entre otros.
+
+--
+
+Una posible serialización de un proyecto:
+
+```json [1-23|3-4|7,18|8-14,19]
+{
+  "titulo": "Batanar-Batanero-Incorrectamente",
+  "inicio": "2022-08-09T14:19:40.366Z",
+  "fin_deseado":"2022-10-02T05:51:08.801Z",
+  "tareas": [
+    {
+      "simple": true,
+      "trabajadores": [
+        { "nombre": "Gary Centeno", "arancel": 3771 },
+        { "nombre": "Madeline Holguín", "arancel": 2899 }
+      ],
+      "horas": 9,
+      "infra": 3485.81,
+      "descripcion": "Fideo Gencianáceo General.",
+      "responsable": { "nombre": "Leona Gaytán", "arancel": 2054 }
+    },
+    {
+      "simple": false,
+      "tareas": [ ... ],
+      "responsable": { ... }
+    }
+  ]
+}
+```
+
+<!-- .element: class="fullscreen" -->
+
+--
+
+Esto nos lleva al siguiente problema...
 
 ===
 
-## Clase 5
+## [_Impedance mismatch_](https://es.wikipedia.org/wiki/Adaptaci%C3%B3n_de_impedancias_objeto-relacional)
 
-# Refactorización
-
-<small>Ahora sí.</small>
-
-===
-
-## Definición
-
-![Definición](img/refactor-wiki.png)
+O cómo hacer para que mis objetos encajen con su versión serializada.
 
 --
 
-### Regla de oro
+Cuando surge un requerimiento que implica serializar, tenemos dos opciones:
 
-☝️ Sin tests no se refactoriza.
+1. 🤔 **Tirar todo** lo que sabíamos de objetos, y trabajar con el modelo serializado.
+1. 😎 Construir "algo" que **transforme** ese modelo serializado en los objetos que tan bien conocemos.
 
-<small>En ese caso, primero hago los tests, luego refactorizo.</small>
+_Imaginen cuál de las dos vamos a recomendar..._
 
 --
 
-## Para tener en cuenta
+### ¿Qué sentido tiene transformar los objetos?
 
-✅ El código tiene que quedar más _limpio_ que antes.
+- No atar nuestro diseño al de un sistema externo.
+- Poder aplicar todo lo que sabemos de objetos.
+- Permitir distintas serializaciones o fuentes de datos.
+- Independizar dos aspectos que no tienen por qué estar vinculados.
 
-✅ No se agrega funcionalidad mientras se está refactorizando.
+--
 
-✅ Los tests tienen que seguir pasando.
+### Dos opciones para resolverlo
 
-<small>Tomado de https://refactoring.guru/es/refactoring/how-to</small>
+| Adapter                                                                                                                                                                       | Transformer                                                                                                                                                              |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| <img src="img/clases/5/adapter.png" height="300px"> <small style="font-size: 0.5em">Créditos: [Refactoring Gurú](https://refactoring.guru/es/design-patterns/adapter)</small> | <img src="img/clases/5/transformer.png" height="300px"> <small style="font-size: 0.5em">Créditos: [Math Insight](https://mathinsight.org/image/function_machine)</small> |
+
+--
+
+En el TP, van a ver que hay un objeto llamado `TareasApi`, que lee el archivo y devuelve un `ProyectoJson`.
+
+De ahí en adelante, tienen que trabajar ustedes.
 
 ===
 
-## Ejercicios de la clase
+## _Command line interface_ (CLI)
 
-Sobre el repo de _Semillas al viento_ que ya tenían, agregar tests y **luego** corregir los defectos de diseño. Hacerlo en, al menos, dos commits.
+Además de adaptar el JSON, la idea es que puedan construir una pequeña interfaz de línea de comandos que permita interactuar con su programa.
 
-Hay otro ejercicio corto, llamado _Tareas_, pensado para que apliquen un nuevo patrón llamado **Composite**. También hay un video sobre este patrón.
+Para este caso, lo que se pide es únicamente poder visualizar los datos de un proyecto que se selecciona al iniciar el programa.
+
+--
+
+```shell
+¡Hola! ¿Qué proyecto querés ver?
+> p1
+
+El p1 se llama Sarasa. ¿Qué más querés saber?
+1 - Lista de tareas
+2 - Ver si está atrasado
+3 - Otras opciones
+> 2
+
+¡Uf! Zafamos, el proyecto no está atrasado. 😀
+```
+
+===
+
+## Actividades de la semana
+
+### Completar pendientes de aprobación
+
+Para el **martes 12/10** deberían completar todas las actividades que les marcamos como pendientes. Necesitamos que sea esa fecha porque hay que poner la nota del primer parcial. 😁
+
+### Ejercicio Tareas
+
+Agregarle a lo que ya tenían una interfaz por línea de comandos (CLI).
+
+El objetivo es leer proyectos en formatos JSON y mostrar algunos datos sobre ellos.
 
 ===
 
