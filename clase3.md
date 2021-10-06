@@ -20,13 +20,13 @@
 
 Al final de `Conversation`
 
-![CI](/img/clase-3/checks-failed.png)
+![CI](/img/clases/3/checks-failed.png)
 
 --
 
 En `Files changed`
 
-![](/img/clase-3/test-error.png)
+![](/img/clases/3/test-error.png)
 
 --
 
@@ -252,7 +252,7 @@ Nos sirven para:
 
 ### Tensiones entre las cualidades
 
-![Tensiones](img/clase-3/soga.gif)
+![Tensiones](img/clases/3/soga.gif)
 
 En muchos casos deberemos **priorizar** aquellas que nos interesan, aún cuando eso implique descuidar otras.
 

@@ -190,11 +190,11 @@ Siempre va a ser pusheando al mismo repositorio. En la corrección les vamos a d
 
 Por favor, **avisen cuando terminen**.
 
-![](img/clase-4/aviso-github.gif)
+![](img/clases/4/aviso-github.gif)
 
 👇
 
-![](img/clase-4/aviso-discord.png)
+![](img/clases/4/aviso-discord.png)
 
 <!-- .element: class="fragment" -->
 
