@@ -2,7 +2,7 @@
 
 [Clase 1](clase1) - [Clase 2](clase2) - [Clase 3](clase3) - [Clase 4](clase4)
 
-[Clase 5](clase5) - [Clase 6](clase6) - [Clase 7](clase7)
+[Clase 5](clase5) - [Clase 6](clase6) - [Clase 7](clase7) - [Clase 8](clase8)
 
 ![Logo](img/logo.png)
 
